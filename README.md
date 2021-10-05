@@ -1,5 +1,11 @@
 # Getting Started with Create React App
 
+Installierten Pakete:
+npm i node-sass --save
+npm i classnames --save
+
+
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

@@ -1,34 +1,31 @@
 import './App.css';
 import React from 'react';
-import { BrowserRouter, Link, Route } from 'react-router-dom';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-import ActionButton from './components/ActionButton.jsx';
 import Start from './components/start.jsx';
-
+import BeforeEasy from './components/beforeEasy.jsx';
+import BeforeAdvanced from './components/beforeAdvanced.jsx';
 
 function App() {
   return (
     <BrowserRouter>
       <React.Fragment>
         <div className='ui container'>
-          <div className='ui menu'>
-            <div className="header item">Toolbar</div>
-            <Link to='/start' className="item">Startseite</Link>
-            <Link to='/actionButton' className="item">Action Button</Link>
-          </div>
 
-          <div className="ui segment">
             <Route path='/start'>
-              <h1>Startseite</h1>
+              <div></div>
               <div className="ui raised segment"><Start/></div>
             </Route>
-          </div>
-          <div className="ui segment">
-            <Route path='/actionButton'>
-              <h1>Action Buttons!</h1>
-              <div className="ui raised segment"><ActionButton/></div>
+
+            <Route path='/beforeEasy'>
+              <div></div>
+              <div className="ui raised segment"><BeforeEasy/></div>
             </Route>
-          </div>
+
+            <Route path='/beforeAdvanced'>
+              <div></div>
+              <div className="ui raised segment"><BeforeAdvanced/></div>
+            </Route>
 
         </div>
       </React.Fragment>
