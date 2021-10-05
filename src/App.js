@@ -1,24 +1,38 @@
-import logo from './logo.svg';
 import './App.css';
+import React from 'react';
+import { BrowserRouter, Link, Route } from 'react-router-dom';
+
+import ActionButton from './components/ActionButton.jsx';
+import Start from './components/start.jsx';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <React.Fragment>
+        <div className='ui container'>
+          <div className='ui menu'>
+            <div className="header item">Toolbar</div>
+            <Link to='/start' className="item">Startseite</Link>
+            <Link to='/actionButton' className="item">Action Button</Link>
+          </div>
+
+          <div className="ui segment">
+            <Route path='/start'>
+              <h1>Startseite</h1>
+              <div className="ui raised segment"><Start/></div>
+            </Route>
+          </div>
+          <div className="ui segment">
+            <Route path='/actionButton'>
+              <h1>Action Buttons!</h1>
+              <div className="ui raised segment"><ActionButton/></div>
+            </Route>
+          </div>
+
+        </div>
+      </React.Fragment>
+    </BrowserRouter>
   );
 }
 
